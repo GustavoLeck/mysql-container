@@ -18,7 +18,8 @@ services:
       - mysqlNet
     environment:
       MYSQL_ROOT_HOST: '%'
-      MYSQL_USER: root
+      MYSQL_ROOT_PASSWORD: password
+      MYSQL_USER: admin
       MYSQL_ROOT_PASSWORD: password
       MYSQL_DATABASE: mysqldb
     ports:
