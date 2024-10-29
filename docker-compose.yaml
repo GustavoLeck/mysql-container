@@ -1,0 +1,27 @@
+version: '3.1'
+
+networks:
+  postgreNet:
+    name: mysqlNet
+    driver: bridge
+
+volumes:
+  postgree-db:
+
+
+services:
+  mysql-db:
+    image: mysql
+    container_name: mysql
+    restart: always
+    networks:
+      - mysqlNet
+    environment:
+      MYSQL_ROOT_HOST: password
+      MYSQL_USER: user
+      MYSQL_ROOT_PASSWORD: password
+      MYSQL_DATABASE: mysql-db
+    ports:
+      - "3306:3306"
+    volumes:
+      - ./postgres:/data/postgres
